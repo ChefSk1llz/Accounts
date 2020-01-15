@@ -35,7 +35,7 @@
             methods: {
                 setSettings (entries) {
                     console.log(entries)
-                    for(let i = 9; i < entries.length / 10; i+=10){
+                    for(let i = 9; i < entries.length; i+=10){
                         this.$data.accounts.push({
                             attack: entries[i+1].content.$t,
                             stregth: entries[i+1].content.$t,
