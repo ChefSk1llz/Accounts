@@ -7,6 +7,17 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
     <title>Available accounts</title>
+    <div v-for="account of $data.accounts" v-bind:key="account">
+        attack: {{account.attack}}<br>
+        strength: {{account.strength}}<br>
+        defence: {{account.defence}}<br>
+        hitpoints: {{account.hitpoints}}<br>
+        ranged: {{account.ranged}}<br>
+        magic: {{account.magic}}<br>
+        prayer: {{account.prayer}}<br>
+        notes: {{account.notes}}<br>
+        price: {{account.price}}<br>
+    </div>
     <style>
         body{
             margin: 0;
