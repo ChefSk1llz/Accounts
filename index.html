@@ -17,6 +17,27 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+        #table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #table td, #table th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #table tr:nth-child(even){background-color: #f2f2f2;}
+
+        #table tr:hover {background-color: #ddd;}
+
+        #table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: rgb(9, 101, 221);
+            color: white;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -37,7 +58,7 @@
                     for(let i = 10; i < entries.length; i+=10){
                         this.$data.accounts.push({
                             attack: entries[i+1].content.$t,
-                            stregth: entries[i+2].content.$t,
+                            strength: entries[i+2].content.$t,
                             defence: entries[i+3].content.$t,
                             hitpoints: entries[i+4].content.$t,
                             ranged: entries[i+5].content.$t,
