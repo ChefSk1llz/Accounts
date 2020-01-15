@@ -34,18 +34,17 @@
             },
             methods: {
                 setSettings (entries) {
-                    console.log(entries)
                     for(let i = 10; i < entries.length; i+=10){
                         this.$data.accounts.push({
                             attack: entries[i+1].content.$t,
-                            stregth: entries[i+1].content.$t,
-                            defence: entries[i+1].content.$t,
-                            hitpoints: entries[i+1].content.$t,
-                            ranged: entries[i+1].content.$t,
-                            magic: entries[i+1].content.$t,
-                            prayer: entries[i+1].content.$t,
-                            notes: entries[i+1].content.$t,
-                            price: entries[i+1].content.$t
+                            stregth: entries[i+2].content.$t,
+                            defence: entries[i+3].content.$t,
+                            hitpoints: entries[i+4].content.$t,
+                            ranged: entries[i+5].content.$t,
+                            magic: entries[i+6].content.$t,
+                            prayer: entries[i+7].content.$t,
+                            notes: entries[i+8].content.$t,
+                            price: entries[i+9].content.$t
                         });
                     }
                 }
@@ -58,17 +57,33 @@
     <div class="content">
         <h1>Available accounts</h1>
         <div id="app">
-            {{$data.accounts}}
-            <div v-for="account of $data.accounts" v-bind:key="account">
-                attack: {{account.attack}}<br>
-                strength: {{account.strength}}<br>
-                defence: {{account.defence}}<br>
-                hitpoints: {{account.hitpoints}}<br>
-                ranged: {{account.ranged}}<br>
-                magic: {{account.magic}}<br>
-                prayer: {{account.prayer}}<br>
-                notes: {{account.notes}}<br>
-                price: {{account.price}}<br>
+            <div v-for="(account, index) of $data.accounts" v-bind:key="index">
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Attack</th>
+                        <th>Strength</th>
+                        <th>Defence</th>
+                        <th>Hitpoints</th>
+                        <th>Ranged</th>
+                        <th>Magic</th>
+                        <th>Prayer</th>
+                        <th>Notes</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>{{index}}</td>
+                        <td>{{account.attack}}</td>
+                        <td>{{account.strength}}</td>
+                        <td>{{account.defence}}</td>
+                        <td>{{account.hitpoints}}</td>
+                        <td>{{account.ranged}}</td>
+                        <td>{{account.magic}}</td>
+                        <td>{{account.prayer}}</td>
+                        <td>{{account.notes}}</td>
+                        <td>{{account.price}}</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
