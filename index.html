@@ -57,7 +57,7 @@
     <div class="content">
         <h1>Available accounts</h1>
         <div id="app">
-            <div v-for="(account, index) of $data.accounts" v-bind:key="index">
+            <div>
                 <table>
                     <tr>
                         <th>#</th>
@@ -71,7 +71,7 @@
                         <th>Notes</th>
                         <th>Price</th>
                     </tr>
-                    <tr>
+                    <tr v-for="(account, index) of $data.accounts" v-bind:key="index">
                         <td>{{index}}</td>
                         <td>{{account.attack}}</td>
                         <td>{{account.strength}}</td>
