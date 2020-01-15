@@ -1,1 +1,65 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <title>Available accounts</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .content{
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          new Vue({
+            el: '#app',
+            data: {
+              accounts: []
+            },
+            created(){
+                fetch('https://spreadsheets.google.com/feeds/cells/1oZsfYiNL6GoJj-wDZPA0QgFZpTe6BXK2AjDBzM2_0CI/1/public/full?alt=json').
+                then((data) => data.json()).
+                then((data) => {
+                    this.setSettings(data.feed.entry);
+                })
+            },
+            methods: {
+                setSettings (entries) {
+                    console.log(entries)
+                    for(let i = 9; i < entries.length / 10; i+=10){
+                        this.$data.accounts.push({
+                            attack: entries[i+1].content.$t,
+                            stregth: entries[i+1].content.$t,
+                            defence: entries[i+1].content.$t,
+                            hitpoints: entries[i+1].content.$t,
+                            ranged: entries[i+1].content.$t,
+                            magic: entries[i+1].content.$t,
+                            prayer: entries[i+1].content.$t,
+                            notes: entries[i+1].content.$t,
+                            price: entries[i+1].content.$t
+                        });
+                    }
+                }
+            }
+          })
+        })
+      </script>
+</head>
+<body>
+    <div class="content">
+        <h1>Available accounts</h1>
+        <div id="app">
+
+        </div>
+    </div>
+</body>
+</html>
