@@ -23,7 +23,6 @@
         table {
             border-collapse: collapse;
             width: 100%;
-            margin-top: 50px;
             background: white;
         }
 
@@ -39,10 +38,17 @@
             color: white;
             font-weight: 600;
         }
+        .text-center{
+            text-align: center;
+        }
         #header{
-            background: linear-gradient(180deg, #00000066, transparent, #00000057);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             padding: 20px 0;
+            background: linear-gradient(180deg, black, transparent)
+        }
+        #header .content{
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
         }
 
         table tr:nth-child(even){background-color: #ffffff;}
@@ -58,9 +64,6 @@
         }
         #contact{
             padding: 20px 0;
-        }
-        #contact img{
-            float: right;
         }
     </style>
     <script>
@@ -99,11 +102,11 @@
       </script>
 </head>
 <body>
-    <div id="header">        
-        <h1 class="content">Available accounts</h1>
+    <div id="header">    
+        <div class="content"><img src="./Comp_1_1.gif" alt="" height="75"><a href="https://discord.gg/kN2emQa"><img src="./discord.png" alt="" height="50" style="margin-top: 13px"></a> </div>    
     </div>
     <div class="content">
-        <div id="contact"><a href="https://discord.gg/kN2emQa"><img src="./discord.png" alt="" height="50"></a> <center> <img src="./Comp_1.gif" alt="" height="50"> </center></div>  
+        <div id="contact" class="text-center"><h1>Available accounts</h1></div>  
         <div id="app">
             <div>
                 <table>
@@ -134,6 +137,7 @@
                 </table>
             </div>
         </div>
+        <div class="text-center" style="margin-top: 50px"><img src="./Comp_1.gif" alt="" height="50"></div>
     </div>
 </body>
 </html>
